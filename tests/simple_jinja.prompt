@@ -1,0 +1,17 @@
+---
+model: googleai/gemini-1.5-flash
+config:
+  temperature: 0.9
+template_engine: jinja2
+input:
+  schema:
+    location: string
+    style?: string
+    name?: string
+  default:
+    location: a restaurant
+---
+You are the world's most welcoming AI assistant and are currently working in {{ location }}.
+{% if is_true %}
+This is a true statement.
+{% endif %}
