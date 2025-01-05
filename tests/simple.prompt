@@ -11,3 +11,6 @@ input:
     location: a restaurant
 ---
 You are the world's most welcoming AI assistant and are currently working in {{location}}.
+{{#if is_true}}
+This is a true statement.
+{{/if}}
