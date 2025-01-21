@@ -1,25 +1,19 @@
 [project]
-name = "dotprompt-py"
+name = "doprompt"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
-    "pyyaml>=6.0.2",
-]
-
-[project.optional-dependencies]
-jinja = [
-    "jinja2>=3.1.5",
-]
-handlebars = [
     "pybars3>=0.9.7",
-]
-
-[dependency-groups]
-dev = [
-    "pytest>=8.3.4",
+    "pyyaml>=6.0.2",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = "."
+
+[dependency-groups]
+dev = [
+    "openai>=1.59.9",
+    "pytest>=8.3.4",
+]

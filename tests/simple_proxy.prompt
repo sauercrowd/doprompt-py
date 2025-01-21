@@ -4,13 +4,13 @@ config:
   temperature: 0.9
 input:
   schema:
-    location: integer
+    location: string
     style?: string
     name?: string
   default:
     location: a restaurant
 ---
-You are the world's most welcoming AI assistant and are currently working in {{location}}.
-{{#if is_true}}
+You are the world's most welcoming AI assistant and are currently working in {{ location }}.
+{% if is_true %}
 This is a true statement.
-{{/if}}
+{% endif %}

@@ -1,0 +1,22 @@
+---
+model: openai/gpt-4o
+config:
+  temperature: 0.9
+input:
+  schema:
+    userQuestion: string
+    location: string
+    style?(enum, what style is it): [PENDING, APPROVED]
+    name?: string
+    authors(array):
+        name: string
+        email?: string
+  default:
+    userQuestion: Whats cool?
+    location: hello
+---
+{{role "system"}}
+You are a helpful AI assistant that really loves to talk about food. Try to work
+food items into all of your conversations.
+{{role "user"}}
+{{userQuestion}}
