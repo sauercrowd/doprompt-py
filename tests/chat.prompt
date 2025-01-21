@@ -8,9 +8,6 @@ input:
     location: string
     style?(enum, what style is it): [PENDING, APPROVED]
     name?: string
-    authors(array):
-        name: string
-        email?: string
   default:
     userQuestion: Whats cool?
     location: hello
