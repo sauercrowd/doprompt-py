@@ -31,7 +31,11 @@ class DoPrompt:
         self.prompt_template = prompt_section.strip()
 
     def validate_schema(self, values):
-        schema = self.metadata.get('input', {}).get('schema', {})
+        schema = self.metadata.get('input', {}).get('schema')
+
+        if schema is None:
+            return
+
         recursively_validate_schema(schema, values)
         
 
