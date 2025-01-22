@@ -38,6 +38,9 @@ class DoPrompt:
     def get_metadata(self):
         return self.metadata
 
+    def get_config(self, key):
+        return self.model_config.get(key)
+
     def get_messages(self, values=None):
         current_message = None
         messages = []
