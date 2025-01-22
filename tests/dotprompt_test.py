@@ -15,3 +15,13 @@ def test_execute_prompt():
 
 
     assert prompt.model_name == 'gpt-4o'
+
+
+          
+
+def test_execute_shortcut():
+    prompt = DoPrompt("./tests/chat.prompt")
+
+    prompt.complete({
+        'userQuestion': 'What is the capital of France?',
+    })

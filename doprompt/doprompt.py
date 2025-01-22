@@ -67,8 +67,21 @@ class DoPrompt:
         self.validate_schema(values)
         return values
 
-    def render_prompt(self):
-        pass
+    def complete(self, vals):
+        if self.model_vendor == 'openai':
+            from openai import OpenAI
+
+            config = self.metadata.get('config')
+            client = OpenAI(api_key=config.get('api_key'))
+
+            completion = client.chat.completions.create(
+                messages=self.get_messages(vals),
+                model=self.model_name,
+                temperature=config.get('temperature'),
+            )
+
+            return completion.choices[0].message.content
+        raise ValueError('Only openai currently supports this shortcut')
 
 
 def render_handlebars(content, values):

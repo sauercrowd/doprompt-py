@@ -6,7 +6,7 @@ input:
   schema:
     userQuestion: string
     location: string
-    style?(enum, what style is it): [PENDING, APPROVED]
+    style?(enum): [PENDING, APPROVED]
     name?: string
   default:
     userQuestion: Whats cool?
