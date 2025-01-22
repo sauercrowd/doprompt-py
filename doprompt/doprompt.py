@@ -80,6 +80,9 @@ class DoPrompt:
                 temperature=config.get('temperature'),
             )
 
+            breakpoint()
+            print("completion", completion)
+
             return completion.choices[0].message.content
         raise ValueError('Only openai currently supports this shortcut')
 

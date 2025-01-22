@@ -7,10 +7,11 @@ input:
     userQuestion: string
     location: string
     style?(enum): [PENDING, APPROVED]
-    name?: string
+    profiles?(array):
+      username: string
+      age: integer
   default:
-    userQuestion: Whats cool?
-    location: hello
+    location: France
 ---
 {{role "system"}}
 You are a helpful AI assistant that really loves to talk about food. Try to work
